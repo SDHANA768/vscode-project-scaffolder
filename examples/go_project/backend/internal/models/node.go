@@ -1,0 +1,3 @@
+package models
+
+// Node model

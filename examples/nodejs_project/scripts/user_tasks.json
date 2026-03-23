@@ -1,0 +1,34 @@
+// =============================================================================
+// user_tasks.json
+// HOW TO USE:
+//   1. Press Ctrl+Shift+P in VS Code
+//   2. Type "Open User Tasks" and press Enter
+//   3. Copy the task block below into that file
+//   4. Change YOUR_PATH to actual path of create_project.py on your PC
+//
+// RESULT: "Create New Full Project" task available in ALL workspaces globally
+// =============================================================================
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🚀 Create New Full Project",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                // !! CHANGE THIS PATH to where create_project.py is stored !!
+                "C:\\YOUR_PATH\\TEMPLETS\\create_project.py",
+                "${input:projectName}",
+                "${workspaceFolder}"
+            ],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "Enter project name"
+        }
+    ]
+}
