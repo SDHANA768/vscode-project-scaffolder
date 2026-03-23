@@ -1,0 +1,56 @@
+// =============================================================================
+// workspace_tasks.json
+// HOW TO USE:
+//   1. Open your .code-workspace file (e.g. PROJECTS.code-workspace)
+//   2. Add the "settings" and "tasks" blocks below into it
+//   3. Change YOUR_PATH to actual path of create_project.py
+// =============================================================================
+
+"settings": {
+    "task.quickOpen.showAll": false,
+    "task.autoDetect": "off"
+},
+
+"tasks": {
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🚀 Create New Full Project",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "C:\\YOUR_PATH\\TEMPLETS\\create_project.py",
+                "${input:projectName}",
+                "${workspaceFolder}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "📂 CD to Current File Folder",
+            "type": "shell",
+            "command": "cd /d \"${fileDirname}\" && cmd /k",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🏠 CD to Workspace Root",
+            "type": "shell",
+            "command": "cd /d \"${workspaceFolder}\" && cmd /k",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectName",
+            "type": "promptString",
+            "description": "Enter project name"
+        }
+    ]
+}

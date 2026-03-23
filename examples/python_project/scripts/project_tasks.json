@@ -1,0 +1,30 @@
+// =============================================================================
+// project_tasks.json (reference copy — actual file is .vscode/tasks.json)
+// Active when this project folder is opened DIRECTLY in VS Code
+// Ignored if opened via a .code-workspace file
+// =============================================================================
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "📂 CD to Current File Folder",
+            "type": "shell",
+            "command": "cd /d \"${fileDirname}\" && cmd /k",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🏠 CD to Workspace Root",
+            "type": "shell",
+            "command": "cd /d \"${workspaceFolder}\" && cmd /k",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+            },
+            "problemMatcher": []
+        }
+    ]
+}

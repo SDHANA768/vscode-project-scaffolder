@@ -1,0 +1,6 @@
+{
+    "name": "php_project/backend",
+    "require": {
+        "php": ">=8.0"
+    }
+}
